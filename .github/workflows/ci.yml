@@ -25,7 +25,7 @@ jobs:
           restore-keys: |
             cache-node-modules-
 
-      - name: Run ci
+      - name: Run ci with npm
         run: |
           npm install
           npm run ci
