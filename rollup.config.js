@@ -14,6 +14,7 @@ export default {
     },
     {
       file: 'dist/sparrow.min.js',
+      name: 'sp',
       format: 'umd', // dual mode
     },
   ],
