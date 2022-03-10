@@ -9,7 +9,8 @@
     "test-live": "cross-env DEBUG_MODE=1 jest --coverage",
     "build": "rimraf -rf ./dist ./lib ./esm && rollup --config",
     "prepare": "husky install",
-    "ci": "run-s lint test build"
+    "ci": "run-s lint test build",
+    "pub": "./scripts/pub.sh"
   },
   "lint-staged": {
     "*.js": [
