@@ -26,7 +26,9 @@ export function defineRenderer(
     const shapesFns = SUPPORTED_SHAPE_IMPLES.reduce(
       (accu, curr) => ({
         ...accu,
-        [curr]: (opts) => shapesImpl[curr](ctx, opts),
+        [curr]: (opts) =>
+          // eslint-disable-next-line implicit-arrow-linebreak
+          shapesImpl[curr] && shapesImpl[curr](ctx, opts),
       }),
       Object.create(null),
     )
@@ -36,6 +38,7 @@ export function defineRenderer(
         ...accu,
         [curr]: (...args) =>
           // eslint-disable-next-line implicit-arrow-linebreak
+          transformImpl[curr] &&
           transformImpl[curr](ctx, ...args),
       }),
       Object.create(null),
